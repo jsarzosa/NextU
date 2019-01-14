@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura id="122990" fecha="25/04/2018">
+	<cliente>
+		<nombre>Juan Sarzosa</nombre>
+		<telefono>0998129544</telefono>
+	</cliente>
+	<articulos id="00045">
+		<descripcion>Detergente Deja</descripcion>
+		<precio-unitario>120.88</precio-unitario>
+		<precio-final>1208.8</precio-final>
+		<cantidad>10</cantidad>
+	</articulos>
+	<articulos id="00046">
+		<descripcion>Jabon Lava</descripcion>
+		<precio-unitario>15.1</precio-unitario>
+		<precio-final>15.1</precio-final>
+		<cantidad>1</cantidad>
+	</articulos>
+	<precio-total>1223.9</precio-total>
+</factura>
