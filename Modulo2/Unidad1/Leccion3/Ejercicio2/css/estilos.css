@@ -1,0 +1,19 @@
+label
+{
+width:200px;
+}
+body
+{
+margin-left: 20px;
+margin-right: 20px;
+margin-top: 20px;
+margin-bottom: 20px;
+font-family: verdana;
+}
+p, label{
+	font-family: Tahoma;
+}
+
+input[name^=email]{
+	background-color: #eeeeee;
+}

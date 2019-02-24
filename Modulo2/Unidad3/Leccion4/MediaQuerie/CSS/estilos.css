@@ -1,0 +1,31 @@
+img
+{
+    width: 300px;
+    height: 300px;
+}
+p
+{
+    font-size: 8px;
+}
+footer
+{
+    color: blue;
+}
+h2
+{
+    word-spacing: 300px;
+}
+@media print {
+img {
+  width: 100%;
+  }
+  h1{
+    text-align: center;
+  }
+}
+
+@media (max-width:600px) {
+  p{
+    color:red;
+  }
+}

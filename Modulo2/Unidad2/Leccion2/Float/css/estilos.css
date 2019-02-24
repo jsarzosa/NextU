@@ -1,0 +1,30 @@
+header{
+  background-color: rgb(213, 156, 64);
+  width: 100%;
+  height: 120px;
+}
+header img{
+  height: 90%;
+  float: right;
+  padding: 0.5% 2% 0 0;
+}
+section{
+  width: 100%;
+  height: 400px;
+  background-color: rgb(133, 195, 226);
+}
+section aside{
+  width: 20%;
+  height: 400px;
+  background-color: rgb(24, 128, 180);
+}
+section article{
+  width: 80%;
+  height: 400px;
+  background-color: rgb(150, 185, 203);
+}
+footer{
+  height: 100px;
+  width: 100%;
+  background-color: rgb(218, 146, 29);
+}
