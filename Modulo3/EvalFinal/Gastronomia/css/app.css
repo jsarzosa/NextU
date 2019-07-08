@@ -1,0 +1,17 @@
+body {
+  background-image: url("../img/fondo.jpg");
+  background-size: cover;
+  }
+.row{
+  background: rgba(76, 175, 80, 0.3);
+}
+.callout {
+  background: rgba(255, 255, 255, 0.0);
+  border-radius: 10px;
+}
+#principal {
+  background: rgba(100, 175, 200, 0.3);
+}
+#subfila {
+  background: rgba(255, 255, 255, 0.0);
+}

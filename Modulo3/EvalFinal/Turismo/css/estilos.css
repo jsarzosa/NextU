@@ -1,0 +1,9 @@
+nav {
+        height: 80px;
+        line-height: 80px;
+    }
+
+  body {
+      background-image: url("../img/fondo.jpg");
+      background-size: cover;
+      }
