@@ -1,0 +1,87 @@
+<header>
+	<div class="navbar well shadow-sm">
+		<div class="container d-flex justify-content-between">
+			<div class="col-sm-8">
+				<h2>La Bodega</h2>
+			</div>
+
+			<div class="col-sm-1">
+				<button (click)=principalClicked()>
+					<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-grid-3x3-gap-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
+					</svg>
+				</button>
+			</div>				
+				
+			<div class="col-sm-1">
+				<button (click)=carritoClicked()>
+					<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+					</svg>
+				</button>
+			</div>
+			
+			<div class="col-sm-1">
+				<a [routerLink]="['']">
+					<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-door-open-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2v13h1V2.5a.5.5 0 0 0-.5-.5H11zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+
+</header>
+    
+<div *ngIf="mostrarCarrito">
+	<pedido>Loading...</pedido>
+</div>
+
+<div id="detalle">
+</div>
+	
+<div *ngIf="mostrarPrincipal" class="mostrarPrincipal">
+	<div class="container well shadow-sm">
+		<div class="col-md-8">
+			<h2>Catalogo de Productos</h2>
+		</div>
+			
+		<div class="col-md-4">
+			<strong>Que estás buscando ?</strong>
+			<div class="wrap">
+				<input list="productos" name="productos" type="text" placeholder="Elige un producto" oninput="BuscarProductos(this)" class="pivotProductos">
+				<datalist id="productos">
+					<option *ngFor="let producto of productos" value={{producto.nombre}}></option>
+				</datalist>
+			</div>
+		</div>
+	</div>
+		
+	<div class="container well">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4" *ngFor="let producto of productos">
+					<div class="card-body">
+						<div class="card shadow-sm productos {{producto.id}}" id="{{producto.nombre}}">
+							<img class="bd-placeholder-img card-img-top" src={{producto.imagen}} width="90%" height="225"/>
+							<h2 id="nom_prod">{{producto.nombre}}</h2>			
+				            <p>Precio: {{producto.precio}}</p>
+							<p>Unidades Disponibles: {{producto.cantidad}}</p>
+							<div class="d-flex">
+								<div class="col-md-2">
+									<button id="{{producto.id}}" class="btn btn-outline-secondary" onclick="llenarDetalle(this)">Ver+</button>
+								</div>
+								<div class="col-md-3">
+									<button (click)="AnadirPedido()" class="btn btn-success">Añadir</button>
+								</div>
+								<div class="col-md-2">
+									<input type="number" value="0" style="text-align:left">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>				
+</div>
