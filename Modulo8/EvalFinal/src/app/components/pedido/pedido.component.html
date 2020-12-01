@@ -1,0 +1,32 @@
+
+<div class="col-sm-8 well">
+		<div class="container">
+			<div>
+			<div *ngFor="let pedido of pedidos">
+				<div class="col-md-6">
+					<div class="card shadow-sm">
+						<img class="bd-placeholder-img card-img-center" src={{pedido.imagen}} width="30%"/>
+							<table>
+								<tr>
+									<strong>(Id:  </strong> {{pedido.id_producto}}) - {{pedido.nombre_producto}}
+								</tr>
+									
+								<tr>
+									<strong>Unidades: </strong>{{pedido.cantidad}}
+								</tr>
+								<tr>
+									<strong class="subtotal">Subtotal: </strong> $ {{pedido.total}}
+								</tr>
+							</table>
+
+					</div>
+				</div>
+			</div>
+			</div>
+			<div>
+				<h1 id="total">TOTAL : $</h1>
+				
+				<button>Pagar</button>
+			</div>
+		</div>
+</div>
