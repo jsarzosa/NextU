@@ -1,0 +1,43 @@
+<div class="col-sm-6 well col-sm-offset-3">
+	<h1>Inicia Sesión</h1>
+	<div>
+		<label for="email-input">Correo electrónico:</label>
+		<input type="email" class="form-control" id="email-input" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+	</div>
+
+	<div>
+		<label for="password-input">Contraseña:</label>
+		<input type="password" class="form-control" id="password-input" required>
+	</div>
+		
+	<div class="invisible">
+		<div class="login_bdd" *ngFor="let usuario of usuarios"
+		> {{usuario.login}}
+		</div>
+		
+		<div class="contrasena_bdd" *ngFor="let usuario of usuarios"
+		> {{usuario.contrasena}}
+		</div>
+	</div>
+	
+	<button class="ingreso btn btn-success center-block" onclick="VerificarUsuario()">Enviar</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
